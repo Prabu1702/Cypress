@@ -1,15 +1,11 @@
 {
   "name": "cypress",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.7.3",
+    "cypress": "^13.13.0",
     "cypress-mochawesome-reporter": "^3.8.2"
   },
   "dependencies": {
@@ -17,5 +13,12 @@
     "cypress-plugin-api": "^2.11.1",
     "excel-to-json": "^1.0.0",
     "node": "^18.20.2"
-  }
+  },
+  "scripts": {
+    "test": "npx cypress run",
+    "headed": "npx cypress open",
+    "runInChrome": "npx cypress run --browser chrome",
+    "spec": "npx cypress run -- spec 'cypress/e2e/TicketsNew.cy.js'"
+  },
+  "description": ""
 }
