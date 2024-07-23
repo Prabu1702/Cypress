@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-07-11T05:34:52.204Z",
+    "end": "2024-07-11T05:34:54.822Z",
+    "duration": 2618,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "2161c31e-89f6-4295-93b0-9719bd88b67c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\API_Basics\\crudOperators.cy.js",
+      "file": "cypress\\e2e\\API_Basics\\crudOperators.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "099bf8da-d6cf-4556-8d44-e1113d522d0c",
+          "title": "Handling CRUD operations in API",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Get Call",
+              "fullTitle": "Handling CRUD operations in API Get Call",
+              "timedOut": null,
+              "duration": 603,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.request({\n  method: 'GET',\n  url: 'https://gorest.co.in/public/v2/users',\n  headers: {\n    'Authorization': '7bdccdea6153600f4a6bb7b2e471779c058c54c2a5e4aa6a0fd7ddd004ac4c27'\n  }\n}).then(resp => {\n  expect(resp.status).equal(200);\n});",
+              "err": {},
+              "uuid": "d9257415-8241-4dcb-acaa-2cbf0009e142",
+              "parentUUID": "099bf8da-d6cf-4556-8d44-e1113d522d0c",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Post methods",
+              "fullTitle": "Handling CRUD operations in API Post methods",
+              "timedOut": null,
+              "duration": 1879,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\crudOperators.cy.js\\\\Handling CRUD operations in API -- Post methods (failed).png\"\n    ]\n  ]\n}",
+              "code": "// const requestBody = {\n//     \"name\": \"Sachin1\",\n//     \"email\": \"sachi1@gmail.com\",\n//     \"gender\": \"male\",\n//     \"status\": \"active\"\n//     }\ncy.request({\n  method: 'POST',\n  url: 'https://reqres.in/api/users',\n  body: {\n    \"name\": \"morpheus\",\n    \"job\": \"leader\",\n    \"id\": \"955\",\n    \"createdAt\": \"2024-07-11T05:33:28.879Z\"\n  },\n  headers: {\n    'Authorization': '7bdccdea6153600f4a6bb7b2e471779c058c54c2a5e4aa6a0fd7ddd004ac4c27'\n  }\n}).then(resp => {\n  expect(resp.status).equal(201);\n  expect(resp.body.name).equal('Sachin');\n});",
+              "err": {
+                "message": "AssertionError: expected 'morpheus' to equal 'Sachin'",
+                "estack": "AssertionError: expected 'morpheus' to equal 'Sachin'\n    at Context.eval (webpack://cypress/./cypress/e2e/API_Basics/crudOperators.cy.js:39:43)",
+                "diff": "- 'morpheus'\n+ 'Sachin'\n"
+              },
+              "uuid": "0a0d2c12-3a70-4a10-a561-53864cef9390",
+              "parentUUID": "099bf8da-d6cf-4556-8d44-e1113d522d0c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d9257415-8241-4dcb-acaa-2cbf0009e142"
+          ],
+          "failures": [
+            "0a0d2c12-3a70-4a10-a561-53864cef9390"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2482,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
